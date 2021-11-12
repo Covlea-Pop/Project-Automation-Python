@@ -4,7 +4,6 @@ from behave import *
 from selenium.webdriver.common.by import By
 
 
-
 @when('I access Dynamic Loading page')
 def step_impl(context):
     context.driver.get("https://the-internet.herokuapp.com/")

@@ -14,7 +14,6 @@ def step_impl(context):
 @when('I can use all features')
 def step_impl(context):
     context.driver.find_element(By.CSS_SELECTOR, "#content > div > p:nth-child(3) > a").click()
-
     time.sleep(5)
     context.driver.find_element(By.CSS_SELECTOR, "#content > div > p:nth-child(3) > a").click()
     time.sleep(5)

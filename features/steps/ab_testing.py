@@ -1,11 +1,13 @@
 from behave import *
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 
 @given('I open browser')
 def step_impl(context):
-    context.driver = webdriver.Chrome()
+    context.driver = webdriver.Chrome(ChromeDriverManager().install())
 
 
 @when(u'i click on the AB Testing link')

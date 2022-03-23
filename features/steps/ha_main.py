@@ -1,11 +1,12 @@
 from behave import *
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
 
 @given('open HA main page')
 def open_page(context):
-    context.driver = webdriver.Chrome()
+    context.driver = webdriver.Chrome(ChromeDriverManager().install())
     context.driver.get("https://the-internet.herokuapp.com/")
 
 

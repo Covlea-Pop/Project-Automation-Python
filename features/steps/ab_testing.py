@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 @given('I open browser')
 def step_impl(context):
-    context.driver = webdriver.Chrome(ChromeDriverManager().install())
+    context.driver = webdriver.Chrome()
 
 
 @when(u'i click on the AB Testing link')

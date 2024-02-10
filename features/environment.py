@@ -1,10 +1,13 @@
-# # from features.browser import Browser
-# from selenium import webdriver
-#
-#
-# def before_all(context):
-#     context.browser = webdriver.Chrome()
-#     context.browser.get("https://the-internet.herokuapp.com/")
-#
-# def after_all(context):
-#     context.browser.close()
+# from features.browser import Browser
+from selenium import webdriver
+
+def before_all(context):
+    try:
+        context.browser = webdriver.Chrome()
+    except Exception as e:
+        print("Error initializing WebDriver:", e)
+
+def after_all(context):
+    if hasattr(context, 'browser') and context.browser:
+        context.browser.quit()
+
